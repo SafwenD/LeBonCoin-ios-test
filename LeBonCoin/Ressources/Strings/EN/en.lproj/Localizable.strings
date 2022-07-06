@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  LeBonCoin
+
+  Created by Safwen Debbichi on 04/07/2022.
+  
+*/
+
+"AD_LIST_PAGE_TITLE" = "Ads";
+"AD_LIST_API_ERROR" = "Couldn't fetch ads!";
+"AD_LIST_URGENT" = "Urgent!";
+"AD_LIST_UKNOWN_CATEGORY" = "Uncategorized";
