@@ -9,16 +9,23 @@ import Foundation
 
 protocol AdDetailsViewModelProtocol {
     var ad: ClassifiedAd { get }
+    var categoryName: String { get }
 }
 
 class AdDetailsViewModel: AdDetailsViewModelProtocol {
     
     // MARK: - Public variables
     var ad: ClassifiedAd
+    var categoryName: String {
+        return category?.name ?? ""
+    }
+    
+    private var category: Category?
     
     // MARK: - Initialization
-    init (model: ClassifiedAd) {
+    init (model: ClassifiedAd, category: Category?) {
         self.ad = model
+        self.category = category
     }
     
 }

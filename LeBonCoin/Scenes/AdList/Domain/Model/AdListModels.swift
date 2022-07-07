@@ -54,3 +54,9 @@ struct ClassifiedAd: Decodable {
     
 }
 
+extension ClassifiedAd {
+    var priceLiteral: String {
+        return "\(self.price)€"
+    }
+}
+

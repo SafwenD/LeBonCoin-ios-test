@@ -10,3 +10,6 @@
 "AD_LIST_API_ERROR" = "Couldn't fetch ads!";
 "AD_LIST_URGENT" = "Urgent!";
 "AD_LIST_UKNOWN_CATEGORY" = "Uncategorized";
+"AD_DETAIL_PAGE_TITLE" = "Details";
+"AD_DETAIL_DESCRIPTION" = "Description:";
+"AD_DETAIL_URGENT" = "Urgent!";

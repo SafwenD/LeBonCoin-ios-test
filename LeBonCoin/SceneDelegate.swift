@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var mainCoordinator: AdListCoordinator = AdListCoordinator() // need to have a strong reference to the coordinator to be able to do navigations
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -18,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = AdListCoordinator().startRoot() ?? UINavigationController()
+        window.rootViewController = mainCoordinator.startRoot() ?? UINavigationController()
         window.makeKeyAndVisible()
         self.window = window
     }

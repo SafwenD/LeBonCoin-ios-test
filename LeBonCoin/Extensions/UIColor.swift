@@ -16,4 +16,6 @@ extension UIColor {
     static let categoryBackground = UIColor(named: "categoryBackground")
     static let urgent = UIColor(named: "urgent")
     static let urgentBackground = UIColor(named: "urgentBackground")
+    static let desc = UIColor(named: "description")
+    static let previewBackground = UIColor(named: "previewBackground")
 }

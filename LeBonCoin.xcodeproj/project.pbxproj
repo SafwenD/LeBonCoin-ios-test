@@ -31,11 +31,11 @@
 		5ACED89D2873806700934E0B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED89C2873806700934E0B /* Constants.swift */; };
 		5ACED89F287442B300934E0B /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED89E287442B300934E0B /* Date.swift */; };
 		5ACED8A328745F1500934E0B /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED8A228745F1500934E0B /* UIImageView.swift */; };
-		5ACED8A528746CF900934E0B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED8A428746CF900934E0B /* UIView.swift */; };
 		5ACED8A72874713300934E0B /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED8A62874713300934E0B /* Typography.swift */; };
 		5ACED8B1287495D400934E0B /* AdDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED8B0287495D400934E0B /* AdDetailsViewController.swift */; };
 		5ACED8B3287495EB00934E0B /* AdDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED8B2287495EB00934E0B /* AdDetailsViewModel.swift */; };
 		5ACED8B62874962E00934E0B /* AdDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED8B52874962E00934E0B /* AdDetailsCoordinator.swift */; };
+		5ACED93828778F9100934E0B /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED93728778F9100934E0B /* ImagePreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,11 +84,11 @@
 		5ACED89C2873806700934E0B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5ACED89E287442B300934E0B /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		5ACED8A228745F1500934E0B /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
-		5ACED8A428746CF900934E0B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		5ACED8A62874713300934E0B /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		5ACED8B0287495D400934E0B /* AdDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewController.swift; sourceTree = "<group>"; };
 		5ACED8B2287495EB00934E0B /* AdDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewModel.swift; sourceTree = "<group>"; };
 		5ACED8B52874962E00934E0B /* AdDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsCoordinator.swift; sourceTree = "<group>"; };
+		5ACED93728778F9100934E0B /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,7 +299,6 @@
 				5AB38BF328736D6C009DB115 /* UIDevice.swift */,
 				5ACED89E287442B300934E0B /* Date.swift */,
 				5ACED8A228745F1500934E0B /* UIImageView.swift */,
-				5ACED8A428746CF900934E0B /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -359,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				5ACED8B0287495D400934E0B /* AdDetailsViewController.swift */,
+				5ACED93728778F9100934E0B /* ImagePreviewView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -507,6 +507,7 @@
 				5A8EFE6B287239A6001920A4 /* NetworkManager.swift in Sources */,
 				5AB38BEC28731B60009DB115 /* String.swift in Sources */,
 				5A8EFE6828722F41001920A4 /* AdListViewController.swift in Sources */,
+				5ACED93828778F9100934E0B /* ImagePreviewView.swift in Sources */,
 				5A8EFE6728722F41001920A4 /* AdListViewModel.swift in Sources */,
 				5A8EFE6428722F41001920A4 /* AdListDataProvider.swift in Sources */,
 				5ACED89F287442B300934E0B /* Date.swift in Sources */,
@@ -523,7 +524,6 @@
 				5AB38BDD2872D109009DB115 /* UIColor.swift in Sources */,
 				5A8EFE6328722F41001920A4 /* AdListRepository.swift in Sources */,
 				5A8EFE2228722BC9001920A4 /* SceneDelegate.swift in Sources */,
-				5ACED8A528746CF900934E0B /* UIView.swift in Sources */,
 				5A8EFE6628722F41001920A4 /* AdListUseCases.swift in Sources */,
 				5ACED8B3287495EB00934E0B /* AdDetailsViewModel.swift in Sources */,
 			);

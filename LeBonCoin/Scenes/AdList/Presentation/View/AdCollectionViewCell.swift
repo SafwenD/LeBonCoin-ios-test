@@ -26,19 +26,12 @@ class AdCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(model: ClassifiedAd, category: Category?) {
-        categoryLabel.attributedText = attributedText(text: category?.name ?? "AD_LIST_UKNOWN_CATEGORY".localized, color: UIColor.category, font: TypoGraphy.AdList.category)
-        titleLabel.attributedText = attributedText(text: model.title, color: UIColor.adTitle, font: TypoGraphy.AdList.title)
-        priceLabel.attributedText = attributedText(text: "\(model.price)€", color: UIColor.price, font: TypoGraphy.AdList.price)
-        creationDateLabel.attributedText = attributedText(text: model.creationDate?.toAdDateString ?? "", color: UIColor.creationDate, font: TypoGraphy.AdList.creationDate)
+        categoryLabel.attributedText = (category?.name ?? "AD_LIST_UKNOWN_CATEGORY".localized).attributedText(color: UIColor.category, font: TypoGraphy.AdList.category)
+        titleLabel.attributedText = model.title.attributedText(color: UIColor.adTitle, font: TypoGraphy.AdList.title)
+        priceLabel.attributedText = model.priceLiteral.attributedText(color: UIColor.price, font: TypoGraphy.AdList.price)
+        creationDateLabel.attributedText = (model.creationDate?.toAdDateString ?? "").attributedText(color: UIColor.creationDate, font: TypoGraphy.AdList.creationDate)
         thumbnailImageView.load(with: URL(string: model.imagesUrl.small ?? ""), placeholder: UIImage.placeHolder)
         urgentTagView.isHidden = !model.isUrgent
-    }
-    
-    private func attributedText(text: String, color: UIColor?, font: UIFont) -> NSAttributedString {
-        let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: color ?? .black]
-        let attText = NSMutableAttributedString(string: text)
-        attText.addAttributes(attributes, range: NSRange(location: 0, length: text.count))
-        return attText
     }
     
     private func setupViews() {
@@ -60,7 +53,6 @@ class AdCollectionViewCell: UICollectionViewCell {
         urgentTagView.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor).isActive = true
         urgentTagView.backgroundColor = UIColor.urgentBackground
         urgentTagView.layer.cornerRadius = 7
-        urgentTagView.fadeInFadeOut()
         // Urgent Label
         urgentTagView.addSubview(urgentLabel)
         urgentLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -68,7 +60,7 @@ class AdCollectionViewCell: UICollectionViewCell {
         urgentLabel.bottomAnchor.constraint(equalTo: urgentTagView.bottomAnchor, constant: -4.0).isActive = true
         urgentLabel.leadingAnchor.constraint(equalTo: urgentTagView.leadingAnchor, constant: 4.0).isActive = true
         urgentLabel.trailingAnchor.constraint(equalTo: urgentTagView.trailingAnchor, constant: -4.0).isActive = true
-        urgentLabel.attributedText = attributedText(text: "AD_LIST_URGENT".localized, color: UIColor.urgent, font: TypoGraphy.AdList.urgent)
+        urgentLabel.attributedText = "AD_LIST_URGENT".localized.attributedText(color: UIColor.urgent, font: TypoGraphy.AdList.urgent)
         urgentTagView.isHidden = true
         // Category background view
         self.addSubview(categoryBgView)

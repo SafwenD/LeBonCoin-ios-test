@@ -10,3 +10,6 @@
 "AD_LIST_API_ERROR" = "Aucune annonces trouvées!";
 "AD_LIST_URGENT" = "Urgent!";
 "AD_LIST_UKNOWN_CATEGORY" = "Non répertoriée";
+"AD_DETAIL_PAGE_TITLE" = "Détails";
+"AD_DETAIL_DESCRIPTION" = "Description:";
+"AD_DETAIL_URGENT" = "Urgent!";

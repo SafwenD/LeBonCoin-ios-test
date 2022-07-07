@@ -37,7 +37,7 @@ class AdListViewController: UIViewController {
         collectionView.delegate = self
         searchBar.delegate = self
         bindToViewModel()
-        viewModel?.getAdsList()
+        viewModel?.getAdsAndCategories()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,11 +46,10 @@ class AdListViewController: UIViewController {
 
     // MARK: - Display logic
     private func setupViews() {
+        let safeAreaLayoutGuide = self.view.safeAreaLayoutGuide
         // Cosmetics
         self.title = "AD_LIST_PAGE_TITLE".localized
         self.view.backgroundColor = UIColor.mainBackground
-        // UIElements
-        let safeAreaLayoutGuide = self.view.safeAreaLayoutGuide
         // Search Bar
         self.view.addSubview(searchBar)
         searchBar.translatesAutoresizingMaskIntoConstraints = false
@@ -111,6 +110,10 @@ extension AdListViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return kAdCollectionCellMargin
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.viewModel?.showAdDetails(index: indexPath.row)
     }
 }
 

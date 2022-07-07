@@ -8,13 +8,14 @@
 import Foundation
 
 struct AdListViewModelNavigation {
-    // let navigateToOtherView: () -> ()
+    let navigateToDetails: (_ model: ClassifiedAd, _ category: Category?) -> ()
 }
 
 protocol AdListViewModelInput {
-    func getAdsList()
     func getCategory(forId id: Int) -> Category?
+    func getAdsAndCategories()
     func filterAds(ByTitle pattern: String)
+    func showAdDetails(index: Int)
 }
 
 protocol AdListViewModelOutput {
@@ -52,20 +53,13 @@ class AdListViewModel: AdListViewModelProtocol {
 // MARK: - Input protocol implementation
 extension AdListViewModel {
     
-    func getAdsList() {
-        self.useCases.executeFetchClassifiedAdsList { [weak self] result in
+    func getAdsAndCategories() {
+        self.useCases.executeFetchAdsAndCategories { [weak self] result in
             switch result {
-            case .success(let adsList):
-                self?.useCases.executeFetchCategories(completion: { result in
-                    switch result {
-                    case .success(let categories):
-                        self?.categories = categories
-                    case .failure(_):
-                        break
-                    }
-                    self?.fullAdList = adsList
-                    self?.currentAdList = adsList
-                })
+            case .success(let adsAndCategories):
+                self?.categories = adsAndCategories.categories
+                self?.fullAdList = adsAndCategories.ads
+                self?.currentAdList = adsAndCategories.ads
             case .failure(let error):
                 self?.shouldShowError?(error)
             }
@@ -84,5 +78,11 @@ extension AdListViewModel {
                 return ad.title.lowercased().contains(pattern.lowercased())
             })
         }
+    }
+    
+    func showAdDetails(index: Int) {
+        guard index < currentAdList.count else { return }
+        let model = currentAdList[index]
+        self.navigations.navigateToDetails(model, getCategory(forId: model.categoryId))
     }
 }
