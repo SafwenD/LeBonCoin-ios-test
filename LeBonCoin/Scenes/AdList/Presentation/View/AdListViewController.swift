@@ -13,10 +13,12 @@ class AdListViewController: UIViewController {
     private let kAdCollectionCellMargin: CGFloat = 8
     private let kAdCollectionCellVerticalSpacing: CGFloat = 20
     
+    // MARK: - Public properties
+    var viewModel: AdListViewModelProtocol?
+    let searchBar: UISearchBar = UISearchBar()
+    let collectionView: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+    
     // MARK: - Private properties
-    private var viewModel: AdListViewModelProtocol?
-    private let searchBar: UISearchBar = UISearchBar()
-    private let collectionView: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
     private let columnCount: CGFloat = UIDevice.isIPad ? 5 : 2
         
     // MARK: - View lifecycle
@@ -74,12 +76,6 @@ class AdListViewController: UIViewController {
     private func bindToViewModel() {
         self.viewModel?.didUpdateAdsList = { [weak self] in
             self?.collectionView.reloadData()
-        }
-        
-        self.viewModel?.shouldShowError = { [weak self] _ in
-            let alert = UIAlertController(title: "Oups", message: "AD_LIST_API_ERROR".localized, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self?.present(alert, animated: true, completion: nil)
         }
     }
 

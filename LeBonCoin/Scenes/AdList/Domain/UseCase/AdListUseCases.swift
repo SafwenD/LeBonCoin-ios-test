@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AdListUseCasesProtocol {
-    func executeFetchAdsAndCategories(completion: @escaping (Result<(ads: [ClassifiedAd], categories: [Category]), Error>) -> Void)
+    func executeFetchAdsAndCategories(completion: @escaping (Result<(ads: [ClassifiedAd], categories: [AdCategory]), Error>) -> Void)
 }
 
 final class AdListUseCases {
@@ -25,10 +25,10 @@ final class AdListUseCases {
 
 extension AdListUseCases: AdListUseCasesProtocol {
     
-    func executeFetchAdsAndCategories(completion: @escaping (Result<(ads: [ClassifiedAd], categories: [Category]), Error>) -> Void) {
+    func executeFetchAdsAndCategories(completion: @escaping (Result<(ads: [ClassifiedAd], categories: [AdCategory]), Error>) -> Void) {
         let group = DispatchGroup()
         var ads: [ClassifiedAd] = []
-        var cat: [Category] = []
+        var cat: [AdCategory] = []
         var error: Error?
         // categories
         group.enter()

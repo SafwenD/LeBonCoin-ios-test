@@ -25,7 +25,7 @@ class AdCollectionViewCell: UICollectionViewCell {
         setupViews()
     }
     
-    func configure(model: ClassifiedAd, category: Category?) {
+    func configure(model: ClassifiedAd, category: AdCategory?) {
         categoryLabel.attributedText = (category?.name ?? "AD_LIST_UKNOWN_CATEGORY".localized).attributedText(color: UIColor.category, font: TypoGraphy.AdList.category)
         titleLabel.attributedText = model.title.attributedText(color: UIColor.adTitle, font: TypoGraphy.AdList.title)
         priceLabel.attributedText = model.priceLiteral.attributedText(color: UIColor.price, font: TypoGraphy.AdList.price)

@@ -20,10 +20,10 @@ class AdDetailsViewModel: AdDetailsViewModelProtocol {
         return category?.name ?? ""
     }
     
-    private var category: Category?
+    private var category: AdCategory?
     
     // MARK: - Initialization
-    init (model: ClassifiedAd, category: Category?) {
+    init (model: ClassifiedAd, category: AdCategory?) {
         self.ad = model
         self.category = category
     }

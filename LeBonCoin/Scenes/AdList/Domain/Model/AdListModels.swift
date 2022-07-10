@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct Category: Decodable {
+struct AdCategory: Decodable {
     var id: Int
     var name: String
 }
@@ -36,6 +36,17 @@ struct ClassifiedAd: Decodable {
         case creationDate = "creation_date"
         case isUrgent = "is_urgent"
         case imagesUrl = "images_url"
+    }
+    
+    init(id: Int, title: String, categoryId: Int, creationDate: Date?, description: String, isUrgent: Bool, imagesUrl: ImageURL, price: Float) {
+        self.id = id
+        self.title = title
+        self.categoryId = categoryId
+        self.creationDate = creationDate
+        self.description = description
+        self.isUrgent = isUrgent
+        self.imagesUrl = imagesUrl
+        self.price = price
     }
     
     init(from decoder: Decoder) throws {

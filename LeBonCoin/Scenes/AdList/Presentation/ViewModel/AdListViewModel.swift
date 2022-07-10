@@ -8,11 +8,12 @@
 import Foundation
 
 struct AdListViewModelNavigation {
-    let navigateToDetails: (_ model: ClassifiedAd, _ category: Category?) -> ()
+    let navigateToDetails: (_ model: ClassifiedAd, _ category: AdCategory?) -> ()
+    let showErrorAlert: (_ error: Error) -> ()
 }
 
 protocol AdListViewModelInput {
-    func getCategory(forId id: Int) -> Category?
+    func getCategory(forId id: Int) -> AdCategory?
     func getAdsAndCategories()
     func filterAds(ByTitle pattern: String)
     func showAdDetails(index: Int)
@@ -21,7 +22,6 @@ protocol AdListViewModelInput {
 protocol AdListViewModelOutput {
     var currentAdList: [ClassifiedAd] { get }
     var didUpdateAdsList: (() -> Void)? { get set }
-    var shouldShowError: ((Error) -> Void)? { get set }
 }
 
 protocol AdListViewModelProtocol: AdListViewModelInput, AdListViewModelOutput {}
@@ -30,7 +30,6 @@ class AdListViewModel: AdListViewModelProtocol {
     
     // MARK: - Public variables
     var didUpdateAdsList: (() -> Void)?
-    var shouldShowError: ((Error) -> Void)?
     var currentAdList: [ClassifiedAd] = [] {
         didSet { 
             didUpdateAdsList?()
@@ -40,7 +39,7 @@ class AdListViewModel: AdListViewModelProtocol {
     // MARK: - Private variables
     private let navigations : AdListViewModelNavigation
     private let useCases: AdListUseCasesProtocol
-    private var categories: [Category] = []
+    private var categories: [AdCategory] = []
     private var fullAdList: [ClassifiedAd] = []
     
     // MARK: - Initialization
@@ -61,12 +60,12 @@ extension AdListViewModel {
                 self?.fullAdList = adsAndCategories.ads
                 self?.currentAdList = adsAndCategories.ads
             case .failure(let error):
-                self?.shouldShowError?(error)
+                self?.navigations.showErrorAlert(error)
             }
         }
     }
     
-    func getCategory(forId id: Int) -> Category? {
+    func getCategory(forId id: Int) -> AdCategory? {
         return self.categories.first { $0.id == id }
     }
     

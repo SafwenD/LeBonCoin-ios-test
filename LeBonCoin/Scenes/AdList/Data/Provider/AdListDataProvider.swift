@@ -9,7 +9,7 @@ import Foundation
 
 protocol AdListDataProviderProtocol {
     func fetchAdsList(completion: @escaping (Result<[ClassifiedAd], Error>) -> Void)
-    func fetchCategories(completion: @escaping (Result<[Category], Error>) -> Void)
+    func fetchCategories(completion: @escaping (Result<[AdCategory], Error>) -> Void)
 }
 
 final class AdListDataProvider {
@@ -46,7 +46,7 @@ extension AdListDataProvider: AdListDataProviderProtocol {
         }
     }
     
-    func fetchCategories(completion: @escaping (Result<[Category], Error>) -> Void) {
+    func fetchCategories(completion: @escaping (Result<[AdCategory], Error>) -> Void) {
         guard let url = URL(string: APIName.categoryList.endPoint) else {
             completion(.failure(APIError.invalidUrl.instance))
             return
@@ -56,7 +56,7 @@ extension AdListDataProvider: AdListDataProviderProtocol {
             switch result {
             case .success(let data):
                 do {
-                    let categories = try JSONDecoder().decode([Category].self, from: data)
+                    let categories = try JSONDecoder().decode([AdCategory].self, from: data)
                     completion(.success(categories))
                 } catch (let error) {
                     print("error parsing categories: \(error.localizedDescription)")

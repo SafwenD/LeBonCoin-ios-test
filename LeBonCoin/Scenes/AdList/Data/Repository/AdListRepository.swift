@@ -7,7 +7,7 @@
 
 protocol AdListRepositoryProtocol {
     func fetchClassifiedAdsList(completion: @escaping (Result<[ClassifiedAd], Error>) -> Void)
-    func fetchCategories(completion: @escaping (Result<[Category], Error>) -> Void)
+    func fetchCategories(completion: @escaping (Result<[AdCategory], Error>) -> Void)
 }
 
 final class AdListRepository {
@@ -27,7 +27,7 @@ extension AdListRepository: AdListRepositoryProtocol {
         dataProvider.fetchAdsList(completion: completion)
     }
     
-    func fetchCategories(completion: @escaping (Result<[Category], Error>) -> Void) {
+    func fetchCategories(completion: @escaping (Result<[AdCategory], Error>) -> Void) {
         dataProvider.fetchCategories(completion: completion)
     }
 }

@@ -10,7 +10,6 @@
 		5A8EFE2028722BC9001920A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8EFE1F28722BC9001920A4 /* AppDelegate.swift */; };
 		5A8EFE2228722BC9001920A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8EFE2128722BC9001920A4 /* SceneDelegate.swift */; };
 		5A8EFE2928722BCB001920A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A8EFE2828722BCB001920A4 /* Assets.xcassets */; };
-		5A8EFE3728722BCB001920A4 /* LeBonCoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8EFE3628722BCB001920A4 /* LeBonCoinTests.swift */; };
 		5A8EFE4128722BCB001920A4 /* LeBonCoinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8EFE4028722BCB001920A4 /* LeBonCoinUITests.swift */; };
 		5A8EFE4328722BCB001920A4 /* LeBonCoinUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8EFE4228722BCB001920A4 /* LeBonCoinUITestsLaunchTests.swift */; };
 		5A8EFE6328722F41001920A4 /* AdListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8EFE5628722F41001920A4 /* AdListRepository.swift */; };
@@ -36,6 +35,11 @@
 		5ACED8B3287495EB00934E0B /* AdDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED8B2287495EB00934E0B /* AdDetailsViewModel.swift */; };
 		5ACED8B62874962E00934E0B /* AdDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED8B52874962E00934E0B /* AdDetailsCoordinator.swift */; };
 		5ACED93828778F9100934E0B /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED93728778F9100934E0B /* ImagePreviewView.swift */; };
+		5ACED9412877996D00934E0B /* AdListRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED93D2877996D00934E0B /* AdListRepositoryTests.swift */; };
+		5ACED9422877996D00934E0B /* AdListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED93E2877996D00934E0B /* AdListViewModelTests.swift */; };
+		5ACED9432877996D00934E0B /* AdListUseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED93F2877996D00934E0B /* AdListUseCasesTests.swift */; };
+		5ACED9442877996D00934E0B /* AdListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED9402877996D00934E0B /* AdListViewControllerTests.swift */; };
+		5ACED94E287B7B8400934E0B /* AdDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACED94A287B7B8400934E0B /* AdDetailsViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +66,6 @@
 		5A8EFE2828722BCB001920A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A8EFE2D28722BCB001920A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A8EFE3228722BCB001920A4 /* LeBonCoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeBonCoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A8EFE3628722BCB001920A4 /* LeBonCoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBonCoinTests.swift; sourceTree = "<group>"; };
 		5A8EFE3C28722BCB001920A4 /* LeBonCoinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeBonCoinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8EFE4028722BCB001920A4 /* LeBonCoinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBonCoinUITests.swift; sourceTree = "<group>"; };
 		5A8EFE4228722BCB001920A4 /* LeBonCoinUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeBonCoinUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -89,6 +92,11 @@
 		5ACED8B2287495EB00934E0B /* AdDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsViewModel.swift; sourceTree = "<group>"; };
 		5ACED8B52874962E00934E0B /* AdDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailsCoordinator.swift; sourceTree = "<group>"; };
 		5ACED93728778F9100934E0B /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
+		5ACED93D2877996D00934E0B /* AdListRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdListRepositoryTests.swift; sourceTree = "<group>"; };
+		5ACED93E2877996D00934E0B /* AdListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdListViewModelTests.swift; sourceTree = "<group>"; };
+		5ACED93F2877996D00934E0B /* AdListUseCasesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdListUseCasesTests.swift; sourceTree = "<group>"; };
+		5ACED9402877996D00934E0B /* AdListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdListViewControllerTests.swift; sourceTree = "<group>"; };
+		5ACED94A287B7B8400934E0B /* AdDetailsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdDetailsViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +161,8 @@
 		5A8EFE3528722BCB001920A4 /* LeBonCoinTests */ = {
 			isa = PBXGroup;
 			children = (
-				5A8EFE3628722BCB001920A4 /* LeBonCoinTests.swift */,
+				5ACED948287B7B8400934E0B /* AdDetails */,
+				5ACED93C2877996D00934E0B /* AdList */,
 			);
 			path = LeBonCoinTests;
 			sourceTree = "<group>";
@@ -371,6 +380,25 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		5ACED93C2877996D00934E0B /* AdList */ = {
+			isa = PBXGroup;
+			children = (
+				5ACED93D2877996D00934E0B /* AdListRepositoryTests.swift */,
+				5ACED93E2877996D00934E0B /* AdListViewModelTests.swift */,
+				5ACED93F2877996D00934E0B /* AdListUseCasesTests.swift */,
+				5ACED9402877996D00934E0B /* AdListViewControllerTests.swift */,
+			);
+			path = AdList;
+			sourceTree = "<group>";
+		};
+		5ACED948287B7B8400934E0B /* AdDetails */ = {
+			isa = PBXGroup;
+			children = (
+				5ACED94A287B7B8400934E0B /* AdDetailsViewControllerTests.swift */,
+			);
+			path = AdDetails;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -533,7 +561,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A8EFE3728722BCB001920A4 /* LeBonCoinTests.swift in Sources */,
+				5ACED9412877996D00934E0B /* AdListRepositoryTests.swift in Sources */,
+				5ACED9442877996D00934E0B /* AdListViewControllerTests.swift in Sources */,
+				5ACED9432877996D00934E0B /* AdListUseCasesTests.swift in Sources */,
+				5ACED94E287B7B8400934E0B /* AdDetailsViewControllerTests.swift in Sources */,
+				5ACED9422877996D00934E0B /* AdListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

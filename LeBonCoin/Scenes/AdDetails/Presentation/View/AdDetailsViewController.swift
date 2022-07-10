@@ -10,7 +10,7 @@ import UIKit
 class AdDetailsViewController: UIViewController {
 
     // MARK: - Private properties
-    private var viewModel: AdDetailsViewModelProtocol?
+    var viewModel: AdDetailsViewModelProtocol?
     private var scrollView: UIScrollView = UIScrollView()
     private var contentView: UIView = UIView()
     private var adImageView: UIImageDownloaderView = UIImageDownloaderView()
@@ -74,6 +74,7 @@ class AdDetailsViewController: UIViewController {
         adImageView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.35).isActive = true
         adImageView.isUserInteractionEnabled = true
         adImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapOnImage)))
+        adImageView.image = UIImage.placeHolder
         // category
         self.contentView.addSubview(categoryBgView)
         categoryBgView.translatesAutoresizingMaskIntoConstraints = false
@@ -89,6 +90,7 @@ class AdDetailsViewController: UIViewController {
         categoryLabel.bottomAnchor.constraint(equalTo: categoryBgView.bottomAnchor, constant: -4.0).isActive = true
         categoryLabel.leadingAnchor.constraint(equalTo: categoryBgView.leadingAnchor, constant: 4.0).isActive = true
         categoryLabel.trailingAnchor.constraint(equalTo: categoryBgView.trailingAnchor, constant: -4.0).isActive = true
+        categoryLabel.tag = UIViewTags.AdDetails.categoryLabel
         // Title Label
         contentView.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -102,11 +104,13 @@ class AdDetailsViewController: UIViewController {
         priceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0).isActive = true
         priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8.0).isActive = true
         priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8.0).isActive = true
+        priceLabel.tag = UIViewTags.AdDetails.priceLabel
         // Date Label
         contentView.addSubview(dateLabel)
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         dateLabel.topAnchor.constraint(equalTo: adImageView.bottomAnchor, constant: 8.0).isActive = true
         dateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8.0).isActive = true
+        dateLabel.tag = UIViewTags.AdDetails.dateLabel
         // description title Label
         contentView.addSubview(descriptionHeadLabel)
         descriptionHeadLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -130,6 +134,7 @@ class AdDetailsViewController: UIViewController {
         urgentTagView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor).isActive = true
         urgentTagView.backgroundColor = UIColor.urgentBackground
         urgentTagView.layer.cornerRadius = 7
+        urgentLabel.tag = UIViewTags.AdDetails.urgentView
         // Urgent Label
         urgentTagView.addSubview(urgentLabel)
         urgentLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -151,7 +156,7 @@ class AdDetailsViewController: UIViewController {
         urgentTagView.isHidden = !(viewModel?.ad.isUrgent ?? false)
     }
     
-    @objc private func didTapOnImage() {
+    @objc func didTapOnImage() {
         guard let image = self.adImageView.image else { return }
         presentPreview(forImage: image)
     }

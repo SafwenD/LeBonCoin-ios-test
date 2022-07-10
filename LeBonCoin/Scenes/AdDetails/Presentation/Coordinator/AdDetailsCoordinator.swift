@@ -16,7 +16,7 @@ class AdDetailsCoordinator {
         self.navigationController = navigationController
     }
     
-    func start(withModel model: ClassifiedAd, categaory: Category?) {
+    func start(withModel model: ClassifiedAd, categaory: AdCategory?) {
         // Should be resolving the following dependencies using Dependency injection container in Swinject
         let viewModel = AdDetailsViewModel(model: model, category: categaory)
         self.viewController = AdDetailsViewController(viewModel: viewModel)

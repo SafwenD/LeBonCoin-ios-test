@@ -17,9 +17,15 @@ class AdListCoordinator {
         // Should be resolving the following dependencies using Dependency injection container in Swinject
         let repository = AdListRepository(dataProvider: AdListDataProvider(networkManager: NetworkManager()))
         let useCases = AdListUseCases(repository: repository)
-        let navigations = AdListViewModelNavigation { [weak self] (model, category) in
+        let showErrorAlert: (_ error: Error) -> () = { [weak self] (error: Error) in
+            let alert = UIAlertController(title: "Oups", message: "AD_LIST_API_ERROR".localized, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self?.navigationController?.present(alert, animated: true, completion: nil)
+        }
+        let navigateToDetails: (_ model: ClassifiedAd, _ category: AdCategory?) -> () = { [weak self] (model: ClassifiedAd, category: AdCategory?) in
             self?.childCoordinator?.start(withModel: model, categaory: category)
         }
+        let navigations = AdListViewModelNavigation(navigateToDetails: navigateToDetails, showErrorAlert: showErrorAlert)
         let viewModel = AdListViewModel(useCases: useCases, navigations: navigations)
         self.viewController = AdListViewController(viewModel: viewModel)
         if let vController = self.viewController {
