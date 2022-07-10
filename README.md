@@ -1,11 +1,6 @@
 
 **Un project "sample" d'un exercise pour le boncoin.**
 
-Progrès :
-
- - [x] En cours
- - [ ] Fini
-
 *Exercice*:
 Créer une application universelle (iPhone, iPad) en Swift. Celle-ci devra afficher une liste d'annonces disponibles sur l'API  [https://raw.githubusercontent.com/leboncoin/paperclip/master/listing.json](https://raw.githubusercontent.com/leboncoin/paperclip/master/listing.json)  La correspondance des ids de catégories se trouve sur l'API  [https://raw.githubusercontent.com/leboncoin/paperclip/master/categories.json](https://raw.githubusercontent.com/leboncoin/paperclip/master/categories.json)  Le contrat d'API est visualisable à cette adresse :  [https://raw.githubusercontent.com/leboncoin/paperclip/master/swagger.yaml](https://raw.githubusercontent.com/leboncoin/paperclip/master/swagger.yaml)
 
